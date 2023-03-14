@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca Binaria</title>
+</head>
+
+<body>
+    <script>
+        function buscaBinaria(array, elemento, inicio, fim) {
+            if (fim < inicio) { return -1; }
+            let meio = Math.floor((inicio + fim) / 2);
+            if (array[meio] === elemento) {
+                return meio;
+            } else if (array[meio] < elemento) {
+                return buscaBinaria(array, elemento, meio + 1, fim);// função recursiva, chamar função dentro dela mesma
+            } else {
+                return buscaBinaria(array, elemento, inicio, meio - 1);
+            }
+        }
+        console.log(buscaBinaria([1, 2, 3, 4, 5], 3, 0, 4)); // Imprime 2
+    </script>
+</body>
+
+</html>
